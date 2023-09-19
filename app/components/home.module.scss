@@ -133,6 +133,11 @@
   }
 }
 
+.sidebar-header-link {
+  text-decoration: none; /* 移除下划线 */
+  color: inherit; /* 使用继承的颜色，保持链接颜色不变 */
+}
+
 .sidebar-header {
   position: relative;
   padding-top: 20px;

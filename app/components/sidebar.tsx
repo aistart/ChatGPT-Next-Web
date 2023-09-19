@@ -4,7 +4,8 @@ import styles from "./home.module.scss";
 
 import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
-import GithubIcon from "../icons/github.svg";
+// import GithubIcon from "../icons/github.svg";
+import GithubIcon from "../icons/three-dots.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
@@ -125,13 +126,22 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
-        <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          家庭教育AI助手
-        </div>
-        <div className={styles["sidebar-sub-title"]}>Based on Claude2</div>
-        <div className={styles["sidebar-logo"] + " no-dark"}>
-          <ChatGptIcon />
-        </div>
+        <a
+          className={styles["sidebar-header-link"]}
+          href={REPO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className={styles["sidebar-title"]} data-tauri-drag-region>
+            家庭教育AI助手交流窗
+          </div>
+          <div className={styles["sidebar-sub-title"]}>
+            【点击】返回家庭教育AI助手首页
+          </div>
+          <div className={styles["sidebar-logo"] + " no-dark"}>
+            <ChatGptIcon />
+          </div>
+        </a>
       </div>
 
       <div className={styles["sidebar-header-bar"]}>
@@ -180,8 +190,13 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
-              <IconButton icon={<GithubIcon />} shadow />
+            <a
+              className={styles["sidebar-header-link"]}
+              href={REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconButton icon={<GithubIcon />} text={"首页"} shadow />
             </a>
           </div>
         </div>

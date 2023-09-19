@@ -6,8 +6,8 @@ import { getClientConfig } from "./config/client";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "家庭教育AI助手！",
-  description: "家长和孩子的AI好助手",
+  title: "家庭教育AI助手交流窗",
+  description: "让家长和孩子与AI直接交流",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "#151515" },
   ],
   appleWebApp: {
-    title: "家庭教育AI助手",
+    title: "家庭教育AI助手交流窗",
     statusBarStyle: "default",
   },
 };
