@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const OPENAI_URL = "https://jrdawigx.cloud.sealos.io/"; // api.openai.com 是原来的值
+export const OPENAI_URL = "api.openai.com"; // api.openai.com 是原来的值
 const DEFAULT_PROTOCOL = "https";
 const PROTOCOL = process.env.PROTOCOL || DEFAULT_PROTOCOL;
 const BASE_URL = process.env.BASE_URL || OPENAI_URL;
