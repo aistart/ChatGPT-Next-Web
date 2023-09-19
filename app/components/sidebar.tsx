@@ -23,6 +23,7 @@ import {
   NARROW_SIDEBAR_WIDTH,
   Path,
   REPO_URL,
+  DAOOOTOP_URL,
 } from "../constant";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -128,7 +129,7 @@ export function SideBar(props: { className?: string }) {
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <a
           className={styles["sidebar-header-link"]}
-          href={REPO_URL}
+          href={DAOOOTOP_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -192,7 +193,7 @@ export function SideBar(props: { className?: string }) {
           <div className={styles["sidebar-action"]}>
             <a
               className={styles["sidebar-header-link"]}
-              href={REPO_URL}
+              href={DAOOOTOP_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
