@@ -6,7 +6,7 @@ import { getClientConfig } from "./config/client";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "家庭教育AI助手",
+  title: "家庭教育AI助手！",
   description: "家长和孩子的AI好助手",
   viewport: {
     width: "device-width",
