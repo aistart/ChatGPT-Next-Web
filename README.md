@@ -1,13 +1,13 @@
 <div align="center">
 <img src="./docs/images/icon.svg" alt="icon"/>
 
-<h1 align="center">ChatGPT Next Web</h1>
+<h1 align="center">ChatGPT Next Web个人学习项目</h1>
 
-English / [简体中文](./README_CN.md) / [日本語](./README_JA.md)
-
-One-Click to get well-designed cross-platform ChatGPT web UI.
-
+ChatGPT Next Web
 一键免费部署你的跨平台私人 ChatGPT 应用。
+页面精美，速度快，部署方便，代码质量高，非常出色的前端。
+[原作者链接](https://github.com/Yidadaa/ChatGPT-Next-Web/issues) 
+详情：
 
 [![Web][Web-image]][web-url]
 [![Windows][Windows-image]][download-url]
