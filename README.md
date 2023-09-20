@@ -9,10 +9,9 @@
 
 页面精美，速度快，部署方便，代码质量高，非常出色的前端。
 
+[![Github原作链接](https://github.githubassets.com/favicons/favicon.svg)](https://gitpod.io/#https://github.com/Yidadaa/ChatGPT-Next-Web)
 
-
-<img src="https://github.githubassets.com/favicons/favicon.svg" />
-[!Github原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web)
+<img src="https://github.githubassets.com/favicons/favicon.svg" /> [!Github原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web)
 
 ![cover](./docs/images/cover.png)
 
