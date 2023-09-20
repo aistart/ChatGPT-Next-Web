@@ -1,7 +1,7 @@
 <div align="center">
 <img src="./docs/images/icon.svg" alt="icon"/>
 
-<h1 align="center">ChatGPT Next Web个人学习项目</h1>
+<h1 align="center">ChatGPT Next Web 个人学习项目</h1>
 
 ChatGPT Next Web 可以一键免费部署你的跨平台私人 ChatGPT 应用。该项目页面精美，速度快，部署方便，代码质量高，非常出色的前端，强烈推荐。
 
@@ -21,13 +21,17 @@ ChatGPT Next Web 可以一键免费部署你的跨平台私人 ChatGPT 应用。
 
 ## 开发计划
 - [x] 调通基本功能
-- [ ] 希望能加入支持文字生成语音
+- [ ] 加入支持文字生成语音
 - [ ] 调通支持自部署的大语言模型
 
 ## 进度
 
 > 调试开发中...
 
+## 致谢
+特别感谢ChatGPT Next Web原作者Yidadaa
+[![Github](https://github.githubassets.com/favicons/favicon.svg)](https://github.com/Yidadaa/ChatGPT-Next-Web)
+ [Github原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web)
 
 ## LICENSE
 
