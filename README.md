@@ -12,7 +12,7 @@
 [原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web/issues) 
 
 
-(https://github.githubassets.com/favicons/favicon.svg) [Github原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web)
+![github](https://github.githubassets.com/favicons/favicon.svg) [Github原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web)
 
 ![cover](./docs/images/cover.png)
 
