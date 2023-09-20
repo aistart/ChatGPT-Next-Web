@@ -21,6 +21,7 @@ const fr: PartialLocaleType = {
       Retry: "Réessayer",
       Delete: "Supprimer",
       Pin: "Épingler",
+      Play: "jouer",
       PinToastContent: "Épingler 2 messages à des messages contextuels",
       PinToastAction: "Voir",
       Edit: "Modifier",

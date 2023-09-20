@@ -27,6 +27,7 @@ const id: PartialLocaleType = {
       Stop: "Berhenti",
       Retry: "Coba Lagi",
       Pin: "Pin",
+      Play: "putar",
       PinToastContent: "2 pesan telah ditandai",
       PinToastAction: "Lihat",
       Delete: "Hapus",

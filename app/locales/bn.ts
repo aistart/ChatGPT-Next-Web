@@ -27,6 +27,7 @@ const bn: PartialLocaleType = {
       Stop: "বন্ধ করুন",
       Retry: "পুনরায় চেষ্টা করুন",
       Pin: "পিন করুন",
+      Play: "প্লে",
       PinToastContent: "পিন করা হয়েছে ২টি বার্তা প্রম্পটে",
       PinToastAction: "দেখুন",
       Delete: "মুছে ফেলুন",

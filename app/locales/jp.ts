@@ -20,7 +20,9 @@ const jp: PartialLocaleType = {
       Stop: "停止",
       Retry: "リトライ",
       Pin: "ピン",
-      PinToastContent: "コンテキストプロンプトに1つのメッセージをピン留めしました",
+      Play: "再生",
+      PinToastContent:
+        "コンテキストプロンプトに1つのメッセージをピン留めしました",
       PinToastAction: "表示",
       Delete: "削除",
       Edit: "編集",
