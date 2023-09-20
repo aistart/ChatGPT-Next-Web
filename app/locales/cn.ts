@@ -37,6 +37,7 @@ const cn = {
       Stop: "停止",
       Retry: "重试",
       Pin: "固定",
+      Play: "播放",
       PinToastContent: "已将 1 条对话固定至预设提示词",
       PinToastAction: "查看",
       Delete: "删除",

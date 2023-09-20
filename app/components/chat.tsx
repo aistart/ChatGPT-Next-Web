@@ -24,6 +24,7 @@ import BreakIcon from "../icons/break.svg";
 import SettingsIcon from "../icons/chat-settings.svg";
 import DeleteIcon from "../icons/clear.svg";
 import PinIcon from "../icons/pin.svg";
+import PlayIcon from "../icons/play.svg";
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
@@ -54,6 +55,8 @@ import {
   autoGrowTextArea,
   useMobileScreen,
 } from "../utils";
+
+import simpleTTS from "../utils/socket_edge_tts.js";
 
 import dynamic from "next/dynamic";
 
@@ -792,6 +795,38 @@ function _Chat() {
     deleteMessage(msgId);
   };
 
+  const onPlay = async (text: string) => {
+    // 定义并初始化变量
+    const my_voice = "zh-CN, YunxiaNeural";
+    const my_pitch = "+0Hz";
+    const my_rate = "+0%";
+    const my_volume = "+0%";
+
+    console.log("message content play: ", text);
+
+    const tempTTS = await new simpleTTS(
+      `Microsoft Server Speech Text to Speech Voice (${my_voice})`,
+      my_pitch,
+      my_rate,
+      my_volume,
+      text,
+      (ttsInstance: any) => {
+        // 这里我们使用了any类型，但最好是为ttsInstance定义一个具体的类型
+        console.log("ttsInstance here", ttsInstance);
+
+        if (tempTTS.ttsUrl) {
+          const audio = new Audio(tempTTS.ttsUrl);
+          audio.load();
+          audio.play();
+        }
+
+        if (!ttsInstance.end_message_received) {
+          console.log(" tempTTS :::", tempTTS);
+        }
+      },
+    );
+  };
+
   const onResend = (message: ChatMessage) => {
     // when it is resending a message
     // 1. for a user's message, find the next bot response
@@ -1183,14 +1218,21 @@ function _Chat() {
                               />
 
                               <ChatAction
+                                text={Locale.Chat.Actions.Copy}
+                                icon={<CopyIcon />}
+                                onClick={() => copyToClipboard(message.content)}
+                              />
+
+                              <ChatAction
                                 text={Locale.Chat.Actions.Pin}
                                 icon={<PinIcon />}
                                 onClick={() => onPinMessage(message)}
                               />
+
                               <ChatAction
-                                text={Locale.Chat.Actions.Copy}
-                                icon={<CopyIcon />}
-                                onClick={() => copyToClipboard(message.content)}
+                                text={Locale.Chat.Actions.Play}
+                                icon={<PlayIcon />}
+                                onClick={() => onPlay(message.content)}
                               />
                             </>
                           )}
