@@ -45,8 +45,12 @@ import {
 import Locale, {
   AllLangs,
   ALL_LANG_OPTIONS,
+  ALL_PLAYLANG_OPTIONS,
+  // ALL_PLAYLANG_OPTIONS,
   changeLang,
   getLang,
+  getPlayLang,
+  changePlayLang,
 } from "../locales";
 import { copyToClipboard } from "../utils";
 import Link from "next/link";
@@ -710,6 +714,22 @@ export function Settings() {
             </Select>
           </ListItem>
 
+          <ListItem title={Locale.Settings.PlayLang.Name}>
+            <Select
+              value={getPlayLang()} // 假设 getPlayLang 是已定义的函数
+              onChange={(e) => {
+                changePlayLang(e.target.value as any);
+                console.log("change value:", e.target.value);
+              }}
+            >
+              {ALL_PLAYLANG_OPTIONS.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Select>
+          </ListItem>
+
           <ListItem
             title={Locale.Settings.FontSize.Title}
             subTitle={Locale.Settings.FontSize.SubTitle}
@@ -914,7 +934,7 @@ export function Settings() {
             <input
               type="text"
               value={config.customModels}
-              placeholder="model1,model2,model3"
+              placeholder="claude-2"
               onChange={(e) =>
                 config.update(
                   (config) => (config.customModels = e.currentTarget.value),

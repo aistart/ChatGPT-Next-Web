@@ -25,6 +25,7 @@ import SettingsIcon from "../icons/chat-settings.svg";
 import DeleteIcon from "../icons/clear.svg";
 import PinIcon from "../icons/pin.svg";
 import PlayIcon from "../icons/play.svg";
+import PlayStopIcon from "../icons/play_stop.svg";
 import EditIcon from "../icons/rename.svg";
 import ConfirmIcon from "../icons/confirm.svg";
 import CancelIcon from "../icons/cancel.svg";
@@ -96,6 +97,10 @@ import { getClientConfig } from "../config/client";
 const Markdown = dynamic(async () => (await import("./markdown")).Markdown, {
   loading: () => <LoadingIcon />,
 });
+
+let audio: HTMLAudioElement | null = null; // 存储音频实例
+let isLoaded: boolean = false; // 追踪是否已加载音频
+let previousText: string | null = null; // 追踪上次播放的文字
 
 export function SessionConfigModel(props: { onClose: () => void }) {
   const chatStore = useChatStore();
@@ -795,35 +800,79 @@ function _Chat() {
     deleteMessage(msgId);
   };
 
-  const onPlay = async (text: string) => {
-    // 定义并初始化变量
-    const my_voice = "zh-CN, YunxiaNeural";
-    const my_pitch = "+0Hz";
-    const my_rate = "+0%";
-    const my_volume = "+0%";
+  const ChatMessageAction = ({ message }: { message: any }) => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
-    console.log("message content play: ", text);
+    const onPlay = async (text: string) => {
+      // 如果音频正在加载，不处理
+      if (isLoading) return;
 
-    const tempTTS = await new simpleTTS(
-      `Microsoft Server Speech Text to Speech Voice (${my_voice})`,
-      my_pitch,
-      my_rate,
-      my_volume,
-      text,
-      (ttsInstance: any) => {
-        // 这里我们使用了any类型，但最好是为ttsInstance定义一个具体的类型
-        console.log("ttsInstance here", ttsInstance);
+      const my_voice = "zh-CN, XiaoxiaoNeural";
+      const my_pitch = "+0Hz";
+      const my_rate = "+0%";
+      const my_volume = "+0%";
 
-        if (tempTTS.ttsUrl) {
-          const audio = new Audio(tempTTS.ttsUrl);
-          audio.load();
-          audio.play();
-        }
+      if (audio && !audio.paused) {
+        audio.pause();
+        setIsPlaying(false); // 更新播放状态
+        return;
+      }
 
-        if (!ttsInstance.end_message_received) {
-          console.log(" tempTTS :::", tempTTS);
-        }
-      },
+      // 检查要播放的文字是否与之前的文字相同
+      const isNewText = text !== previousText;
+
+      if (isLoaded && audio && !isNewText) {
+        // 如果音频已加载并且文字没有改变，直接播放
+        audio.play();
+        setIsPlaying(true); // 更新播放状态
+        return;
+      }
+
+      setIsLoading(true); // 开始加载
+      showToast("稍等几秒，即将播放...");
+
+      // 如果到这一步，意味着需要加载新的音频
+      const tempTTS = await new simpleTTS(
+        `Microsoft Server Speech Text to Speech Voice (${my_voice})`,
+        my_pitch,
+        my_rate,
+        my_volume,
+        text,
+        (ttsInstance: any) => {
+          if (tempTTS.ttsUrl) {
+            setIsLoading(false); // 结束加载
+
+            audio = new Audio(tempTTS.ttsUrl);
+            audio.load();
+            audio.play();
+
+            setIsPlaying(true); // 更新播放状态
+            isLoaded = true; // 标记为已加载
+            previousText = text; // 更新追踪的上次播放的文字
+
+            // 监听播放结束事件，以便更新播放状态
+            audio.addEventListener("ended", () => {
+              setIsPlaying(false);
+            });
+          }
+
+          if (!ttsInstance.end_message_received) {
+            console.log(" tempTTS error:::", tempTTS);
+          }
+        },
+      );
+    };
+
+    return (
+      // 确保这里有返回值
+      <ChatAction
+        text={Locale.Chat.Actions.Play}
+        icon={isPlaying ? <PlayStopIcon /> : <PlayIcon />}
+        onClick={() => {
+          onPlay(message.content);
+        }}
+      />
     );
   };
 
@@ -1229,11 +1278,7 @@ function _Chat() {
                                 onClick={() => onPinMessage(message)}
                               />
 
-                              <ChatAction
-                                text={Locale.Chat.Actions.Play}
-                                icon={<PlayIcon />}
-                                onClick={() => onPlay(message.content)}
-                              />
+                              <ChatMessageAction message={message} />
                             </>
                           )}
                         </div>
