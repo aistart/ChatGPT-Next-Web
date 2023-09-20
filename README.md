@@ -11,7 +11,7 @@
 
 
 
-<img src="[https://github.githubassets.com/favicons/favicon.svg]" />
+<img src="https://github.githubassets.com/favicons/favicon.svg" />
 [!github](https://github.githubassets.com/favicons/favicon.svg)
 [Github原作链接](https://github.com/Yidadaa/ChatGPT-Next-Web)
 
