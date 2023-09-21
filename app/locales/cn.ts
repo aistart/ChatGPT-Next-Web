@@ -119,7 +119,7 @@ const cn = {
     ResetConfirm: "确认清空历史摘要？",
   },
   Home: {
-    NewChat: "与AI助手交流",
+    NewChat: "与AI交流",
     DeleteChat: "确认删除选中的对话？",
     DeleteToast: "已删除会话",
     Revert: "撤销",
@@ -306,7 +306,7 @@ const cn = {
     },
   },
   Store: {
-    DefaultTopic: "与AI助手交流",
+    DefaultTopic: "与AI交流",
     BotHello: "有什么可以帮你的吗",
     Error: "出错了，稍后重试吧",
     Prompt: {
