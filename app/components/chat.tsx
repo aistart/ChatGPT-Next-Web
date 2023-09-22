@@ -63,7 +63,7 @@ import dynamic from "next/dynamic";
 
 import { ChatControllerPool } from "../client/controller";
 import { Prompt, usePromptStore } from "../store/prompt";
-import Locale from "../locales";
+import Locale, { getPlayLang } from "../locales";
 
 import { IconButton } from "./button";
 import styles from "./chat.module.scss";
@@ -808,7 +808,7 @@ function _Chat() {
       // 如果音频正在加载，不处理
       if (isLoading) return;
 
-      const my_voice = "zh-CN, XiaoxiaoNeural";
+      const my_voice = getPlayLang();
       const my_pitch = "+0Hz";
       const my_rate = "+0%";
       const my_volume = "+0%";

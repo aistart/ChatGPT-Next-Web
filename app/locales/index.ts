@@ -373,10 +373,6 @@ export const ALL_PLAYLANG_OPTIONS = [
 ];
 const DEFAULT_PLAYLANG = "zh-CN, XiaoxiaoNeural";
 export type PlayLang = typeof DEFAULT_PLAYLANG;
-// export const AllPlayLangs = Object.keys(ALL_PLAYLANGS) as PlayLang[];
-// export const ALL_PLAYLANG_OPTIONS: Record<PlayLang, string> = {
-//   "zh-CN, XiaoxiaoNeural", "zh-CN, XiaoyiNeural", "zh-CN, YunjianNeural",
-// };
 
 const fallbackLang = cn;
 const targetLang = ALL_LANGS[getLang()] as LocaleType;

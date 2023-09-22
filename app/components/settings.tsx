@@ -450,7 +450,7 @@ function SyncItems() {
 
   return (
     <>
-      <List>
+      {/* <List>
         <ListItem
           title={Locale.Settings.Sync.CloudState}
           subTitle={
@@ -508,7 +508,7 @@ function SyncItems() {
             />
           </div>
         </ListItem>
-      </List>
+      </List> */}
 
       {showSyncConfigModal && (
         <SyncConfigModal onClose={() => setShowSyncConfigModal(false)} />
@@ -716,7 +716,7 @@ export function Settings() {
 
           <ListItem title={Locale.Settings.PlayLang.Name}>
             <Select
-              value={getPlayLang()} // 假设 getPlayLang 是已定义的函数
+              value={getPlayLang()}
               onChange={(e) => {
                 changePlayLang(e.target.value as any);
                 console.log("change value:", e.target.value);
@@ -851,7 +851,7 @@ export function Settings() {
           </ListItem>
         </List>
 
-        <List>
+        {/* <List>
           {showAccessCode ? (
             <ListItem
               title={Locale.Settings.AccessCode.Title}
@@ -942,7 +942,7 @@ export function Settings() {
               }
             ></input>
           </ListItem>
-        </List>
+        </List> */}
 
         <List>
           <ModelConfigList

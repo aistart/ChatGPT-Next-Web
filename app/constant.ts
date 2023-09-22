@@ -68,9 +68,7 @@ export const OpenaiPath = {
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 export const DEFAULT_SYSTEM_TEMPLATE = `
-You are ChatGPT, a large language model trained by OpenAI.
-Knowledge cutoff: 2021-09
-Current model: {{model}}
+You are Claude-2 
 Current time: {{time}}`;
 
 export const SUMMARIZE_MODEL = "claude-2";
@@ -104,10 +102,10 @@ export const DEFAULT_MODELS = [
     name: "claude-2",
     available: true,
   },
-  {
-    name: "gpt-3.5-turbo",
-    available: true,
-  },
+  // {
+  //   name: "gpt-3.5-turbo",
+  //   available: true,
+  // },
   // {
   //   name: "gpt-3.5-turbo-0301",
   //   available: true,

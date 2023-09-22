@@ -138,7 +138,7 @@ export function MaskConfig(props: {
             }
           ></input>
         </ListItem>
-        <ListItem
+        {/* <ListItem
           title={Locale.Mask.Config.HideContext.Title}
           subTitle={Locale.Mask.Config.HideContext.SubTitle}
         >
@@ -151,8 +151,8 @@ export function MaskConfig(props: {
               });
             }}
           ></input>
-        </ListItem>
-
+        </ListItem> */}
+        {/* 
         {!props.shouldSyncFromGlobal ? (
           <ListItem
             title={Locale.Mask.Config.Share.Title}
@@ -192,7 +192,7 @@ export function MaskConfig(props: {
               }}
             ></input>
           </ListItem>
-        ) : null}
+        ) : null} */}
       </List>
 
       <List>
