@@ -67,7 +67,8 @@ const cn = {
     Rename: "重命名对话",
     Typing: "正在输入…",
     Input: (submitKey: string) => {
-      var inputHints = `${submitKey} 发送`;
+      // var inputHints = `${submitKey} 发送`;
+      var inputHints = `提示：可用手机语言输入文字`;
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += "，Shift + Enter 换行";
       }
