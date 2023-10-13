@@ -36,11 +36,11 @@ export const DEFAULT_CONFIG = {
   dontShowMaskSplashScreen: false, // dont show splash screen when create chat
   hideBuiltinMasks: false, // dont add builtin masks
 
-  customModels: "chatglm_lite",
+  customModels: "claude-2",
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "chatglm_lite" as ModelType,
+    model: "claude-2" as ModelType,
     temperature: 0.5,
     top_p: 1,
     max_tokens: 2000,
@@ -150,7 +150,7 @@ export const useAppConfig = createPersistStore(
       }
 
       if (version < 3.5) {
-        state.customModels = "chatglm_lite";
+        state.customModels = "claude-2";
       }
 
       if (version < 3.6) {

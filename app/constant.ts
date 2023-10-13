@@ -68,10 +68,10 @@ export const OpenaiPath = {
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 export const DEFAULT_SYSTEM_TEMPLATE = `
-You are AI assitant 
+You are Claude-2 
 Current time: {{time}}`;
 
-export const SUMMARIZE_MODEL = "chatglm_lite";
+export const SUMMARIZE_MODEL = "claude-2";
 
 export const DEFAULT_MODELS = [
   // {
@@ -100,10 +100,6 @@ export const DEFAULT_MODELS = [
   // },
   {
     name: "claude-2",
-    available: true,
-  },
-  {
-    name: "chatglm_lite",
     available: true,
   },
   // {
